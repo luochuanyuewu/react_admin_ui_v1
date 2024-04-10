@@ -1,7 +1,7 @@
-import React from 'react';
-import toast from 'react-hot-toast';
-import { HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi2';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import toast from "react-hot-toast";
+import { Icon } from "@iconify-icon/react";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const modalDelete = React.useRef<HTMLDialogElement>(null);
@@ -18,10 +18,10 @@ const Profile = () => {
             My Profile
           </h2>
           <button
-            onClick={() => navigate('/profile/edit')}
+            onClick={() => navigate("/profile/edit")}
             className="btn text-xs xl:text-sm dark:btn-neutral"
           >
-            <HiOutlinePencil className="text-lg" /> Edit My Profile
+            <Icon icon="heroicons:pencil" className="text-lg" /> Edit My Profile
           </button>
         </div>
         {/* block 2 */}
@@ -35,9 +35,7 @@ const Profile = () => {
             </div>
           </div>
           <div className="flex flex-col items-start gap-1">
-            <h3 className="font-semibold text-xl xl:text-3xl">
-              Frans AHW
-            </h3>
+            <h3 className="font-semibold text-xl xl:text-3xl">Frans AHW</h3>
             <span className="font-normal text-base">Supervisor</span>
           </div>
         </div>
@@ -77,9 +75,7 @@ const Profile = () => {
               </div>
               {/* column 2 text */}
               <div className="col-span-2 flex flex-col items-start xl:gap-5">
-                <span className="font-semibold">
-                  franswinata6@gmail.com
-                </span>
+                <span className="font-semibold">franswinata6@gmail.com</span>
                 <span className="font-semibold">081-234-5678</span>
                 <span className="font-semibold">
                   Suite 948 Jl. Gajahmada No. 91, Malang, SM 74810
@@ -112,8 +108,7 @@ const Profile = () => {
               <div className="w-full h-[2px] bg-base-300 dark:bg-slate-700 mt-1"></div>
             </div>
             <span className="text-sm xl:text-sm text-neutral-400 dark:text-neutral-content">
-              Authorize faster and easier with your external service
-              account.
+              Authorize faster and easier with your external service account.
             </span>
           </div>
           {/* services block */}
@@ -122,8 +117,8 @@ const Profile = () => {
             <div className="col-span-2 flex flex-col items-start gap-5 xl:w-[240px]">
               <button
                 onClick={() =>
-                  toast('Gaboleh', {
-                    icon: '😠',
+                  toast("Gaboleh", {
+                    icon: "😠",
                   })
                 }
                 className="btn btn-block flex-nowrap justify-start dark:btn-neutral"
@@ -138,19 +133,15 @@ const Profile = () => {
                 </span>
               </button>
               <div className="px-4 gap-2 min-h-12 text-sm font-semibold flex items-center justify-start">
-                <img
-                  className="w-6"
-                  src="/icons8-google.svg"
-                  alt="google"
-                />
+                <img className="w-6" src="/icons8-google.svg" alt="google" />
                 <span className="text-start whitespace-nowrap text-xs xl:text-sm">
                   Connected with Google
                 </span>
               </div>
               <button
                 onClick={() =>
-                  toast('Gaboleh', {
-                    icon: '😠',
+                  toast("Gaboleh", {
+                    icon: "😠",
                   })
                 }
                 className="btn btn-block justify-start dark:btn-neutral"
@@ -175,8 +166,8 @@ const Profile = () => {
               <button className="btn btn-ghost text-error"></button>
               <button
                 onClick={() =>
-                  toast('Gaboleh', {
-                    icon: '😠',
+                  toast("Gaboleh", {
+                    icon: "😠",
                   })
                 }
                 className="btn btn-ghost text-error text-xs xl:text-sm"
@@ -193,26 +184,20 @@ const Profile = () => {
             className="btn dark:btn-neutral text-error dark:text-error text-xs xl:text-sm"
             onClick={() => modalDelete.current?.showModal()}
           >
-            <HiOutlineTrash className="text-lg" />
+            <Icon icon="heroicons:trash" className="text-lg" />
             Delete My Account
           </button>
-          <dialog
-            id="modal_delete"
-            className="modal"
-            ref={modalDelete}
-          >
+          <dialog id="modal_delete" className="modal" ref={modalDelete}>
             <div className="modal-box">
               <h3 className="font-bold text-lg dark:text-white">
                 Action Confirmation!
               </h3>
-              <p className="py-4">
-                Do you want to delete your account?
-              </p>
+              <p className="py-4">Do you want to delete your account?</p>
               <div className="modal-action mx-0 flex-col items-stretch justify-stretch gap-3">
                 <button
                   onClick={() =>
-                    toast('Lancang kamu ya!', {
-                      icon: '😠',
+                    toast("Lancang kamu ya!", {
+                      icon: "😠",
                     })
                   }
                   className="btn btn-error btn-block text-base-100 dark:text-white"

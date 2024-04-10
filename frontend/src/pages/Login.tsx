@@ -1,7 +1,7 @@
 // import React from 'react';
-import ChangeThemes from '../components/ChangesThemes';
-import { DiReact } from 'react-icons/di';
-import { useNavigate } from 'react-router-dom';
+import ChangeThemes from "../components/ChangesThemes";
+import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify-icon/react";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,7 +16,10 @@ const Login = () => {
         </div>
         <div className="w-full h-screen xl:h-auto xl:w-[30%] 2xl:w-[25%] 3xl:w-[20%] bg-base-100 rounded-lg shadow-md flex flex-col items-center p-5 pb-7 gap-8 pt-20 xl:pt-7">
           <div className="flex items-center gap-1 xl:gap-2">
-            <DiReact className="text-4xl sm:text-4xl xl:text-6xl 2xl:text-6xl text-primary animate-spin-slow -ml-3" />
+            <Icon
+              icon="bxl:react"
+              className="text-4xl sm:text-4xl xl:text-6xl 2xl:text-6xl text-primary animate-spin-slow -ml-3"
+            />
             <span className="text-[18px] leading-[1.2] sm:text-lg xl:text-3xl 2xl:text-3xl font-semibold text-base-content dark:text-neutral-200">
               React Dashboard
             </span>
@@ -68,9 +71,7 @@ const Login = () => {
                     defaultChecked
                     className="checkbox w-4 h-4 rounded-md checkbox-primary"
                   />
-                  <span className="label-text text-xs">
-                    Remember me
-                  </span>
+                  <span className="label-text text-xs">Remember me</span>
                 </label>
               </div>
               <a
@@ -81,7 +82,7 @@ const Login = () => {
               </a>
             </div>
             <div
-              onClick={() => navigate('/')}
+              onClick={() => navigate("/")}
               className="btn btn-block btn-primary"
             >
               Log In
@@ -96,11 +97,7 @@ const Login = () => {
                 />
               </button>
               <button className="btn btn-circle dark:btn-neutral">
-                <img
-                  className="w-6"
-                  src="/icons8-google.svg"
-                  alt="google"
-                />
+                <img className="w-6" src="/icons8-google.svg" alt="google" />
               </button>
               <button className="btn btn-circle dark:btn-neutral">
                 <img

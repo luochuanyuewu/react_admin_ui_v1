@@ -1,102 +1,86 @@
-// import toast from 'react-hot-toast';
-import {
-  HiOutlineHome,
-  HiOutlineUser,
-  HiOutlineUsers,
-  HiOutlineCube,
-  HiOutlineClipboardDocumentList,
-  HiOutlineDocumentChartBar,
-  HiOutlinePencilSquare,
-  HiOutlineCalendarDays,
-  HiOutlinePresentationChartBar,
-  HiOutlineDocumentText,
-  HiOutlineArrowLeftOnRectangle,
-} from 'react-icons/hi2';
-// import { IoSettingsOutline } from 'react-icons/io5';
-
 export const menu = [
   {
-    catalog: 'main',
+    catalog: "main",
     listItems: [
       {
         isLink: true,
-        url: '/',
-        icon: HiOutlineHome,
-        label: 'homepage',
+        url: "/",
+        icon: "heroicons:home",
+        label: "homepage",
       },
       {
         isLink: true,
-        url: '/profile',
-        icon: HiOutlineUser,
-        label: 'profile',
+        url: "/profile",
+        icon: "heroicons:user",
+        label: "profile",
       },
     ],
   },
   {
-    catalog: 'lists',
+    catalog: "lists",
     listItems: [
       {
         isLink: true,
-        url: '/users',
-        icon: HiOutlineUsers,
-        label: 'users',
+        url: "/users",
+        icon: "heroicons:home",
+        label: "users",
       },
       {
         isLink: true,
-        url: '/products',
-        icon: HiOutlineCube,
-        label: 'products',
+        url: "/products",
+        icon: "heroicons:cube",
+        label: "products",
       },
       {
         isLink: true,
-        url: '/orders',
-        icon: HiOutlineClipboardDocumentList,
-        label: 'orders',
+        url: "/orders",
+        icon: "heroicons:clipboard-document",
+        label: "orders",
       },
       {
         isLink: true,
-        url: '/posts',
-        icon: HiOutlineDocumentChartBar,
-        label: 'posts',
+        url: "/posts",
+        icon: "heroicons:document-chart-bar",
+        label: "posts",
       },
     ],
   },
   {
-    catalog: 'general',
+    catalog: "general",
     listItems: [
       {
         isLink: true,
-        url: '/notes',
-        icon: HiOutlinePencilSquare,
-        label: 'notes',
+        url: "/notes",
+        icon: "heroicons:pencil-square",
+        label: "notes",
       },
       {
         isLink: true,
-        url: '/calendar',
-        icon: HiOutlineCalendarDays,
-        label: 'calendar',
+        url: "/calendar",
+        icon: "heroicons:calendar-days",
+        label: "calendar",
       },
     ],
   },
   {
-    catalog: 'analytics',
+    catalog: "analytics",
     listItems: [
       {
         isLink: true,
-        url: '/charts',
-        icon: HiOutlinePresentationChartBar,
-        label: 'charts',
+        url: "/charts",
+        icon: "heroicons:presentation-chart-bar",
+        label: "charts",
       },
       {
         isLink: true,
-        url: '/logs',
-        icon: HiOutlineDocumentText,
-        label: 'logs',
+        url: "/logs",
+        icon: "heroicons:document-text",
+        label: "logs",
       },
     ],
   },
   {
-    catalog: 'miscellaneous',
+    catalog: "miscellaneous",
     listItems: [
       // {
       //   isLink: true,
@@ -106,9 +90,9 @@ export const menu = [
       // },
       {
         isLink: true,
-        url: '/login',
-        icon: HiOutlineArrowLeftOnRectangle,
-        label: 'log out',
+        url: "/login",
+        icon: "heroicons:arrow-left-end-on-rectangle",
+        label: "log out",
       },
     ],
   },

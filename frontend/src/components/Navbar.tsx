@@ -1,17 +1,14 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { HiBars3CenterLeft } from 'react-icons/hi2';
-import { DiReact } from 'react-icons/di';
-import { HiSearch, HiOutlineBell } from 'react-icons/hi';
-import { RxEnterFullScreen, RxExitFullScreen } from 'react-icons/rx';
-import ChangeThemes from './ChangesThemes';
-import toast from 'react-hot-toast';
-import { menu } from './menu/data';
-import MenuItem from './menu/MenuItem';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import ChangeThemes from "./ChangesThemes";
+import toast from "react-hot-toast";
+import { menu } from "./menu/data";
+import MenuItem from "./menu/MenuItem";
+import { Icon } from "@iconify-icon/react";
 
 const Navbar = () => {
   const [isFullScreen, setIsFullScreen] = React.useState(true);
-  const element = document.getElementById('root');
+  const element = document.getElementById("root");
 
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
   const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
@@ -26,7 +23,7 @@ const Navbar = () => {
     if (isFullScreen) {
       document.exitFullscreen();
     } else {
-      element?.requestFullscreen({ navigationUI: 'auto' });
+      element?.requestFullscreen({ navigationUI: "auto" });
     }
   }, [element, isFullScreen]);
 
@@ -49,7 +46,7 @@ const Navbar = () => {
               htmlFor="drawer-navbar-mobile"
               className="p-0 btn btn-ghost drawer-button"
             >
-              <HiBars3CenterLeft className="text-2xl" />
+              <Icon icon="heroicons:bars-3-center-left" className="text-2xl" />
             </label>
           </div>
           <div className="drawer-side z-[99]">
@@ -60,10 +57,13 @@ const Navbar = () => {
             ></label>
             <div className="menu p-4 w-auto min-h-full bg-base-200 text-base-content">
               <Link
-                to={'/'}
+                to={"/"}
                 className="flex items-center gap-1 xl:gap-2 mt-1 mb-5"
               >
-                <DiReact className="text-3xl sm:text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
+                <Icon
+                  icon="bxl:react"
+                  className="text-3xl sm:text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow"
+                />
                 <span className="text-[16px] leading-[1.2] sm:text-lg xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
                   React Dashboard
                 </span>
@@ -81,8 +81,11 @@ const Navbar = () => {
         </div>
 
         {/* navbar logo */}
-        <Link to={'/'} className="flex items-center gap-1 xl:gap-2">
-          <DiReact className="text-3xl sm:text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
+        <Link to={"/"} className="flex items-center gap-1 xl:gap-2">
+          <Icon
+            icon="bxl:react"
+            className="text-3xl sm:text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow"
+          />
           <span className="text-[16px] leading-[1.2] sm:text-lg xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
             React Dashboard
           </span>
@@ -94,13 +97,16 @@ const Navbar = () => {
         {/* search */}
         <button
           onClick={() =>
-            toast('Gaboleh cari!', {
-              icon: '😠',
+            toast("Gaboleh cari!", {
+              icon: "😠",
             })
           }
           className="hidden sm:inline-flex btn btn-circle btn-ghost"
         >
-          <HiSearch className="text-xl 2xl:text-2xl 3xl:text-3xl" />
+          <Icon
+            icon="heroicons:magnifying-glass-solid"
+            className="text-xl 2xl:text-2xl 3xl:text-3xl"
+          />
         </button>
 
         {/* fullscreen */}
@@ -109,22 +115,31 @@ const Navbar = () => {
           className="hidden xl:inline-flex btn btn-circle btn-ghost"
         >
           {isFullScreen ? (
-            <RxEnterFullScreen className="xl:text-xl 2xl:text-2xl 3xl:text-3xl" />
+            <Icon
+              icon="bx:fullscreen"
+              className="xl:text-xl 2xl:text-2xl 3xl:text-3xl"
+            />
           ) : (
-            <RxExitFullScreen className="xl:text-xl 2xl:text-2xl 3xl:text-3xl" />
+            <Icon
+              icon="bx:exit-fullscreen"
+              className="xl:text-xl 2xl:text-2xl 3xl:text-3xl"
+            />
           )}
         </button>
 
         {/* notification */}
         <button
           onClick={() =>
-            toast('Gaada notif!', {
-              icon: '😠',
+            toast("Gaada notif!", {
+              icon: "😠",
             })
           }
           className="px-0 xl:px-auto btn btn-circle btn-ghost"
         >
-          <HiOutlineBell className="text-xl 2xl:text-2xl 3xl:text-3xl" />
+          <Icon
+            icon="heroicons:bell"
+            className="text-xl 2xl:text-2xl 3xl:text-3xl"
+          />
         </button>
 
         {/* theme */}
@@ -150,12 +165,12 @@ const Navbar = () => {
             tabIndex={0}
             className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-40"
           >
-            <Link to={'/profile'}>
+            <Link to={"/profile"}>
               <li>
                 <a className="justify-between">My Profile</a>
               </li>
             </Link>
-            <li onClick={() => navigate('/login')}>
+            <li onClick={() => navigate("/login")}>
               <a>Log Out</a>
             </li>
           </ul>

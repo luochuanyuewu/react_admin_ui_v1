@@ -1,13 +1,8 @@
 // import React from 'react';
-import TopDealsBox from '../components/topDealsBox/TopDealsBox';
-import ChartBox from '../components/charts/ChartBox';
-import { useQuery } from '@tanstack/react-query';
-import {
-  MdGroup,
-  MdInventory2,
-  MdAssessment,
-  MdSwapHorizontalCircle,
-} from 'react-icons/md';
+import TopDealsBox from "../components/topDealsBox/TopDealsBox";
+import ChartBox from "../components/charts/ChartBox";
+import { useQuery } from "@tanstack/react-query";
+
 import {
   fetchTotalProducts,
   fetchTotalProfit,
@@ -17,46 +12,46 @@ import {
   fetchTotalSource,
   fetchTotalUsers,
   fetchTotalVisit,
-} from '../api/ApiCollection';
+} from "../api/ApiCollection";
 
 const Home = () => {
   const queryGetTotalUsers = useQuery({
-    queryKey: ['totalusers'],
+    queryKey: ["totalusers"],
     queryFn: fetchTotalUsers,
   });
 
   const queryGetTotalProducts = useQuery({
-    queryKey: ['totalproducts'],
+    queryKey: ["totalproducts"],
     queryFn: fetchTotalProducts,
   });
 
   const queryGetTotalRatio = useQuery({
-    queryKey: ['totalratio'],
+    queryKey: ["totalratio"],
     queryFn: fetchTotalRatio,
   });
 
   const queryGetTotalRevenue = useQuery({
-    queryKey: ['totalrevenue'],
+    queryKey: ["totalrevenue"],
     queryFn: fetchTotalRevenue,
   });
 
   const queryGetTotalSource = useQuery({
-    queryKey: ['totalsource'],
+    queryKey: ["totalsource"],
     queryFn: fetchTotalSource,
   });
 
   const queryGetTotalRevenueByProducts = useQuery({
-    queryKey: ['totalrevenue-by-products'],
+    queryKey: ["totalrevenue-by-products"],
     queryFn: fetchTotalRevenueByProducts,
   });
 
   const queryGetTotalVisit = useQuery({
-    queryKey: ['totalvisit'],
+    queryKey: ["totalvisit"],
     queryFn: fetchTotalVisit,
   });
 
   const queryGetTotalProfit = useQuery({
-    queryKey: ['totalprofit'],
+    queryKey: ["totalprofit"],
     queryFn: fetchTotalProfit,
   });
 
@@ -70,8 +65,8 @@ const Home = () => {
         </div>
         <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
-            chartType={'line'}
-            IconBox={MdGroup}
+            chartType={"line"}
+            IconBox="ic:outline-group"
             title="Total Users"
             {...queryGetTotalUsers.data}
             isLoading={queryGetTotalUsers.isLoading}
@@ -80,8 +75,8 @@ const Home = () => {
         </div>
         <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
-            chartType={'line'}
-            IconBox={MdInventory2}
+            chartType={"line"}
+            IconBox="ic:outline-inventory-2"
             title="Total Products"
             {...queryGetTotalProducts.data}
             isLoading={queryGetTotalProducts.isLoading}
@@ -90,7 +85,7 @@ const Home = () => {
         </div>
         <div className="box row-span-3 col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-5">
           <ChartBox
-            chartType={'pie'}
+            chartType={"pie"}
             title="Leads by Source"
             {...queryGetTotalSource.data}
             isLoading={queryGetTotalSource.isLoading}
@@ -99,8 +94,8 @@ const Home = () => {
         </div>
         <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
-            chartType={'line'}
-            IconBox={MdAssessment}
+            chartType={"line"}
+            IconBox="ic:outline-assessment"
             title="Total Ratio"
             {...queryGetTotalRatio.data}
             isLoading={queryGetTotalRatio.isLoading}
@@ -109,8 +104,8 @@ const Home = () => {
         </div>
         <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
-            chartType={'line'}
-            IconBox={MdSwapHorizontalCircle}
+            chartType={"line"}
+            IconBox="ic:outline-swap-horizontal-circle"
             title="Total Revenue"
             {...queryGetTotalRevenue.data}
             isLoading={queryGetTotalRevenue.isLoading}
@@ -119,7 +114,7 @@ const Home = () => {
         </div>
         <div className="box row-span-2 col-span-full xl:col-span-2 3xl:row-span-3">
           <ChartBox
-            chartType={'area'}
+            chartType={"area"}
             title="Revenue by Products"
             {...queryGetTotalRevenueByProducts.data}
             isLoading={queryGetTotalRevenueByProducts.isLoading}
@@ -128,7 +123,7 @@ const Home = () => {
         </div>
         <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
-            chartType={'bar'}
+            chartType={"bar"}
             title="Total Visit"
             {...queryGetTotalVisit.data}
             isLoading={queryGetTotalVisit.isLoading}
@@ -137,7 +132,7 @@ const Home = () => {
         </div>
         <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
-            chartType={'bar'}
+            chartType={"bar"}
             title="Total Profit"
             {...queryGetTotalProfit.data}
             isLoading={queryGetTotalProfit.isLoading}

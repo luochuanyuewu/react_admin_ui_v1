@@ -1,18 +1,15 @@
-import React from 'react';
+import React from "react";
 import {
   DataGrid,
   GridColDef,
   //   GridToolbarQuickFilter,
   GridToolbar,
   //   GridValueGetterParams,
-} from '@mui/x-data-grid';
-import { useNavigate } from 'react-router-dom';
-import {
-  HiOutlinePencilSquare,
-  HiOutlineEye,
-  HiOutlineTrash,
-} from 'react-icons/hi2';
-import toast from 'react-hot-toast';
+} from "@mui/x-data-grid";
+import { useNavigate } from "react-router-dom";
+
+import { Icon } from "@iconify-icon/react";
+import toast from "react-hot-toast";
 
 interface DataTableProps {
   columns: GridColDef[];
@@ -30,8 +27,8 @@ const DataTable: React.FC<DataTableProps> = ({
   const navigate = useNavigate();
 
   const actionColumn: GridColDef = {
-    field: 'action',
-    headerName: 'Action',
+    field: "action",
+    headerName: "Action",
     minWidth: 200,
     flex: 1,
     renderCell: (params) => {
@@ -44,27 +41,27 @@ const DataTable: React.FC<DataTableProps> = ({
             }}
             className="btn btn-square btn-ghost"
           >
-            <HiOutlineEye />
+            <Icon icon="heroicons:eye" />
           </button>
           <button
             onClick={() => {
-              toast('Jangan diedit!', {
-                icon: '😠',
+              toast("Jangan diedit!", {
+                icon: "😠",
               });
             }}
             className="btn btn-square btn-ghost"
           >
-            <HiOutlinePencilSquare />
+            <Icon icon="heroicons:pencil-square" />
           </button>
           <button
             onClick={() => {
-              toast('Jangan dihapus!', {
-                icon: '😠',
+              toast("Jangan dihapus!", {
+                icon: "😠",
               });
             }}
             className="btn btn-square btn-ghost"
           >
-            <HiOutlineTrash />
+            <Icon icon="heroicons:trash" />
           </button>
         </div>
       );
@@ -78,7 +75,7 @@ const DataTable: React.FC<DataTableProps> = ({
           className="dataGrid p-0 xl:p-3 w-full bg-base-100 text-white"
           rows={rows}
           columns={[...columns, actionColumn]}
-          getRowHeight={() => 'auto'}
+          getRowHeight={() => "auto"}
           initialState={{
             pagination: {
               paginationModel: {
@@ -109,7 +106,7 @@ const DataTable: React.FC<DataTableProps> = ({
           className="dataGrid p-0 xl:p-3 w-full bg-base-100 text-white"
           rows={rows}
           columns={[...columns]}
-          getRowHeight={() => 'auto'}
+          getRowHeight={() => "auto"}
           initialState={{
             pagination: {
               paginationModel: {

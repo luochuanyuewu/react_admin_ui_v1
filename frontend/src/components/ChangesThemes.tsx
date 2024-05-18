@@ -1,6 +1,7 @@
 // import React from 'react';
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
+import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 
 const ChangeThemes = () => {
   useEffect(() => {
@@ -44,12 +45,34 @@ const ChangeThemes = () => {
   ];
 
   return (
-    <div>
-      <select className="select select-sm " data-choose-theme>
+    <div className="dropdown dropdown-end">
+      <div
+        tabIndex={0}
+        role="button"
+        className="btn btn-ghost btn-circle avatar"
+      >
+        <Icon
+          icon="mdi:theme-outline"
+          className="text-xl 2xl:text-2xl 3xl:text-3xl"
+        />
+      </div>
+      <ul
+        tabIndex={0}
+        className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-30"
+      >
+        <div className="menu-title">选择主题</div>
         {themes.map((theme) => (
-          <option value={theme}>{theme}</option>
+          <li>
+            <button
+              data-set-theme={theme}
+              data-act-class="ACTIVECLASS"
+              className="justify-between"
+            >
+              {theme}
+            </button>
+          </li>
         ))}
-      </select>
+      </ul>
     </div>
   );
 
